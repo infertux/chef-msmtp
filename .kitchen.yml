@@ -1,0 +1,17 @@
+---
+driver:
+  name: docker
+
+provisioner:
+  name: chef_zero
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: debian
+
+suites:
+  - name: default
+    run_list:
+      - recipe[msmtp::default]
