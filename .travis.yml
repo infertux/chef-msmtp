@@ -4,8 +4,6 @@ dist: trusty
 group: edge # https://github.com/travis-ci/travis-ci/issues/5448
 services:
   - docker
-rvm: 2.4.1
-before_install:
-  - gem update --system --no-doc # https://github.com/sickill/rainbow/issues/49
+rvm: 2.4.3
 script:
   - bundle exec rake

@@ -1,16 +1,5 @@
 account default
 
-host     <%= node['msmtp']['host'] %>
-port     <%= node['msmtp']['port'] %>
-auth     <%= node['msmtp']['auth'] %>
-user     <%= node['msmtp']['user'] %>
-password <%= node['msmtp']['password'] %>
-from     <%= node['msmtp']['from'] %>
-
-tls on
-tls_trust_file /etc/ssl/certs/ca-certificates.crt
-
-aliases /etc/aliases.msmtp
-
-# Syslog logging with facility LOG_MAIL instead of the default LOG_USER.
-syslog LOG_MAIL
+<% @config.each do |key, value| %>
+<%= "#{key} #{value}" %>
+<% end %>
