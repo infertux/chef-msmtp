@@ -1,16 +1,18 @@
 source 'https://rubygems.org'
 
-group :lint do
+group :development do
+  gem 'berkshelf'
+  gem 'chef', '~> 14'
+  gem 'rake'
+end
+
+group :style do
+  gem 'cookstyle'
   gem 'foodcritic'
-  gem 'rubocop'
 end
 
 group :test do
   gem 'kitchen-docker'
   gem 'kitchen-inspec'
   gem 'test-kitchen'
-end
-
-group :development do
-  gem 'rake'
 end

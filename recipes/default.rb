@@ -4,7 +4,7 @@ template '/etc/msmtprc' do
   owner 'root'
   group 'root'
   mode '0400'
-  variables(config: node['msmtp'].reject { |key| %w[aliases_map].include?(key) })
+  variables(config: node['msmtp'].reject { |key| %w(aliases_map).include?(key) })
 end
 
 file '/etc/aliases.msmtp' do
